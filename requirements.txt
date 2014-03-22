@@ -1,0 +1,13 @@
+Flask==0.10.1
+Jinja2==2.7.2
+MarkupSafe==0.19
+Werkzeug==0.9.4
+beautifulsoup4==4.3.2
+colorama==0.2.7
+firapria==0.1.0
+gunicorn==18.0
+itsdangerous==0.23
+pep8==1.4.6
+redis==2.9.1
+wsgiref==0.1.2
+xmltodict==0.8.6

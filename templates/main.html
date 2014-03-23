@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="language" content="fr" />
+        <title>Est-ce qu’on peut courir demain ?</title>
+        {% assets "css_all" %}
+        <link rel="stylesheet" href="{{ ASSET_URL }}" />
+        {% endassets %}
+        {#
+        <link rel="icon" type="image/png" href="/static/icons/app.png" />
+        <link rel="apple-touch-icon"      href="/static/icons/app.png" />
+        #}
+        <meta name="author"   content="Baptiste Fontaine" />
+    </head>
+    <body class="app">
+
+        {#
+        <!-- for Facebook -->
+        <img style="display:none" src="/static/icons/app.png" />
+        #}
+
+        <p>Hi!</p>
+
+        <footer>
+            <p>&copy;&nbsp;2014&nbsp;<a href="http://bfontaine.net"
+                                        class="text" />Baptiste Fontaine</a></p>
+        </footer>
+        {% assets "js_all" %}
+        <script src="{{ ASSET_URL }}"></script>
+        {% endassets %}
+    </body>
+</html>
+

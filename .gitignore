@@ -1,6 +1,8 @@
 *~
 .*.sw*
 *.pyc
+*.min.*
+.webassets-cache
 .DS_Store
 /venv
 /TODO

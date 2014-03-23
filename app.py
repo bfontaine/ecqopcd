@@ -21,6 +21,7 @@ def iife(_in, out, **kw):
     out.write('}();')
 
 app = Flask(__name__)
+app.debug = True
 
 ## caching
 app.config['CACHE_TYPE'] = 'simple'
@@ -42,6 +43,6 @@ assets.register('css_all', css)
 
 #@cache.cached(timeout=600)  # 10 mins
 @app.route('/')
-def home():
+def index():
     html = render_template('main.html')
     return html_minify(html)

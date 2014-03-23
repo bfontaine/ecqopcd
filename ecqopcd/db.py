@@ -5,6 +5,7 @@ Redis-based mini DB with weather forecasts and pollution indices from the last
 hour.
 """
 
+import os
 import redis
 import json
 import time
@@ -21,14 +22,15 @@ def fetch_data():
     Fetch external data and store it in redis
     """
     p = pollution.PollutionFetcher()
+    w = weather.defaultClient().weather()
     redis.set('data.pollution.json', json.dumps(p.indices()))
-    redis.set('data.weather.json', weather.defaultClient().weather())
+    redis.set('data.weather.json', json.dumps(w))
     redis.set('data.last_fetch', int(time.time()))
 
 
-def pollution():
+def get_pollution():
     return json.loads(redis.get('data.pollution.json') or 'null')
 
 
-def weather():
+def get_weather():
     return json.loads(redis.get('data.weather.json') or 'null')

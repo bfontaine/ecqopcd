@@ -1,7 +1,8 @@
 # -*- coding: UTF-8 -*-
 
 import os
-from flask import Flask, render_template
+from ecqopcd import db
+from flask import Flask, render_template, g
 from flask.ext.assets import Environment, Bundle
 from flask.ext.cache import Cache
 from htmlmin.minify import html_minify
@@ -42,9 +43,10 @@ css = Bundle('normalize.css',
              filters=('cssmin',), output='%s.min.css' % APP_NAME)
 assets.register('css_all', css)
 
-
 #@cache.cached(timeout=600)  # 10 mins
 @app.route('/')
 def index():
+    setattr(g, 'weather', db.get_weather())
+    setattr(g, 'pollution', db.get_pollution())
     html = render_template('main.html')
     return html_minify(html)

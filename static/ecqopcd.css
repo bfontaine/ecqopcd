@@ -1,0 +1,19 @@
+/*
+  dark:      #0B0D28
+  light 1:   #F4EDDA
+  light 2:   #DBB795
+  light 3:   #BF7257
+  highlight: #D70538
+ 
+ */
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+          box-sizing: border-box;
+}
+body {
+  font-family: helvetica, arial, sans-serif;
+  background-color: #F4EDDA;
+}

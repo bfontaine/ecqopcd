@@ -8,8 +8,8 @@ INITSHELL=source venv/bin/activate
 
 all: stylecheck deploy
 
-deploy:
-	git push
+deploy: stylecheck
+	git push heroku master
 
 populate:
 	$(INITSHELL); \

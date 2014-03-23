@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+/*
+* Symbolset
+* www.symbolset.com
+* Copyright © 2013 Oak Studios LLC
+*
+* Upload this file to your web server
+* and place this within your <head> tags.
+* <link href="webfonts/ss-forecast.css" rel="stylesheet" />
+*/
+
+@font-face {
+  font-family: "SSForecast";
+  src: url('ss-forecast.eot');
+  src: url('ss-forecast.eot?#iefix') format('embedded-opentype'),
+       url('ss-forecast.woff') format('woff'),
+       url('ss-forecast.ttf')  format('truetype'),
+       url('ss-forecast.svg#SSForecast') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* This triggers a redraw in IE to Fix IE8's :before content rendering. */
+html:hover [class^="ss-"]{-ms-zoom: 1;}
+
+.ss-icon, .ss-icon.ss-forecast,
+[class^="ss-"]:before, [class*=" ss-"]:before,
+[class^="ss-"].ss-forecast:before, [class*=" ss-"].ss-forecast:before,
+[class^="ss-"].right:after, [class*=" ss-"].right:after,
+[class^="ss-"].ss-forecast.right:after, [class*=" ss-"].ss-forecast.right:after {
+  font-family: "SSForecast";
+  font-style: normal;
+  font-weight: 400;
+  text-decoration: none;
+  text-rendering: optimizeLegibility;
+  white-space: nowrap;
+  /*-webkit-font-feature-settings: "liga"; Currently broken in Chrome >= v22. Falls back to text-rendering. Safari is unaffected. */
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  -o-font-feature-settings: "liga";
+  font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+}
+
+[class^="ss-"].right:before,
+[class*=" ss-"].right:before{display:none;content:'';}
+
+.ss-sun:before,.ss-sun.right:after{content:'☀'}.ss-crescentmoon:before,.ss-crescentmoon.right:after{content:'🌙'}.ss-cloud:before,.ss-cloud.right:after{content:'☁'}.ss-clouds:before,.ss-clouds.right:after{content:''}.ss-partlycloudy:before,.ss-partlycloudy.right:after{content:'⛅'}.ss-cloudynight:before,.ss-cloudynight.right:after{content:''}.ss-mostlycloudyday:before,.ss-mostlycloudyday.right:after{content:''}.ss-mostlycloudynight:before,.ss-mostlycloudynight.right:after{content:''}.ss-rainbow:before,.ss-rainbow.right:after{content:'🌈'}.ss-shootingstar:before,.ss-shootingstar.right:after{content:'🌠'}.ss-rain:before,.ss-rain.right:after{content:'☔'}.ss-heavyrain:before,.ss-heavyrain.right:after{content:'⛆'}.ss-rainyday:before,.ss-rainyday.right:after{content:''}.ss-rainynight:before,.ss-rainynight.right:after{content:''}.ss-freezingrain:before,.ss-freezingrain.right:after{content:''}.ss-heavyfreezingrain:before,.ss-heavyfreezingrain.right:after{content:''}.ss-freezingrainday:before,.ss-freezingrainday.right:after{content:''}.ss-freezingrainnight:before,.ss-freezingrainnight.right:after{content:''}.ss-snow:before,.ss-snow.right:after{content:''}.ss-heavysnow:before,.ss-heavysnow.right:after{content:''}.ss-snowday:before,.ss-snowday.right:after{content:''}.ss-snownight:before,.ss-snownight.right:after{content:''}.ss-rainsnow:before,.ss-rainsnow.right:after{content:''}.ss-heavyrainsnow:before,.ss-heavyrainsnow.right:after{content:''}.ss-rainsnowday:before,.ss-rainsnowday.right:after{content:''}.ss-rainsnownight:before,.ss-rainsnownight.right:after{content:''}.ss-sleet:before,.ss-sleet.right:after{content:''}.ss-heavysleet:before,.ss-heavysleet.right:after{content:''}.ss-sleetday:before,.ss-sleetday.right:after{content:''}.ss-sleetnight:before,.ss-sleetnight.right:after{content:''}.ss-droplet:before,.ss-droplet.right:after{content:'💧'}.ss-droplets:before,.ss-droplets.right:after{content:''}.ss-pellet:before,.ss-pellet.right:after{content:''}.ss-pellets:before,.ss-pellets.right:after{content:''}.ss-snowflake:before,.ss-snowflake.right:after{content:'❄'}.ss-snowflakes:before,.ss-snowflakes.right:after{content:''}.ss-snowflakedrops:before,.ss-snowflakedrops.right:after{content:''}.ss-snowflakepellets:before,.ss-snowflakepellets.right:after{content:''}.ss-star:before,.ss-star.right:after{content:'⋆'}.ss-stars:before,.ss-stars.right:after{content:''}.ss-hail:before,.ss-hail.right:after{content:''}.ss-heavyhail:before,.ss-heavyhail.right:after{content:''}.ss-hailday:before,.ss-hailday.right:after{content:''}.ss-hailnight:before,.ss-hailnight.right:after{content:''}.ss-thunderstorm:before,.ss-thunderstorm.right:after{content:'⛈'}.ss-thunderstormday:before,.ss-thunderstormday.right:after{content:''}.ss-thunderstormnight:before,.ss-thunderstormnight.right:after{content:''}.ss-lightning:before,.ss-lightning.right:after{content:'☇'}.ss-lightningbolts:before,.ss-lightningbolts.right:after{content:''}.ss-wind:before,.ss-wind.right:after{content:''}.ss-windrain:before,.ss-windrain.right:after{content:''}.ss-windsnow:before,.ss-windsnow.right:after{content:''}.ss-windpellets:before,.ss-windpellets.right:after{content:''}.ss-dust:before,.ss-dust.right:after{content:''}.ss-haze:before,.ss-haze.right:after{content:''}.ss-hazeday:before,.ss-hazeday.right:after{content:''}.ss-hazenight:before,.ss-hazenight.right:after{content:''}.ss-fog:before,.ss-fog.right:after{content:''}.ss-fogday:before,.ss-fogday.right:after{content:''}.ss-fognight:before,.ss-fognight.right:after{content:''}.ss-fullthermometer:before,.ss-fullthermometer.right:after{content:''}.ss-highthermometer:before,.ss-highthermometer.right:after{content:''}.ss-thermometer:before,.ss-thermometer.right:after{content:''}.ss-lowthermometer:before,.ss-lowthermometer.right:after{content:''}.ss-emptythermometer:before,.ss-emptythermometer.right:after{content:''}.ss-thermometersnowflake:before,.ss-thermometersnowflake.right:after{content:''}.ss-thermometerday:before,.ss-thermometerday.right:after{content:''}.ss-emptythermometerday:before,.ss-emptythermometerday.right:after{content:''}.ss-sunset:before,.ss-sunset.right:after{content:'🌇'}.ss-sunrise:before,.ss-sunrise.right:after{content:'🌅'}.ss-newmoon:before,.ss-newmoon.right:after{content:'🌑'}.ss-waxingcrescentmoon:before,.ss-waxingcrescentmoon.right:after{content:'🌒'}.ss-firstquartermoon:before,.ss-firstquartermoon.right:after{content:'🌓'}.ss-waxinggibbousmoon:before,.ss-waxinggibbousmoon.right:after{content:'🌔'}.ss-fullmoon:before,.ss-fullmoon.right:after{content:'🌕'}.ss-waninggibbousmoon:before,.ss-waninggibbousmoon.right:after{content:'🌖'}.ss-lastquartermoon:before,.ss-lastquartermoon.right:after{content:'🌗'}.ss-waningcrescentmoon:before,.ss-waningcrescentmoon.right:after{content:'🌘'}.ss-hurricane:before,.ss-hurricane.right:after{content:'🌀'}.ss-tornado:before,.ss-tornado.right:after{content:''}.ss-compass:before,.ss-compass.right:after{content:''}.ss-northeast:before,.ss-northeast.right:after{content:''}.ss-east:before,.ss-east.right:after{content:''}.ss-southeast:before,.ss-southeast.right:after{content:''}.ss-south:before,.ss-south.right:after{content:''}.ss-southwest:before,.ss-southwest.right:after{content:''}.ss-west:before,.ss-west.right:after{content:''}.ss-northwest:before,.ss-northwest.right:after{content:''}.ss-smoke:before,.ss-smoke.right:after{content:''}.ss-umbrella:before,.ss-umbrella.right:after{content:'☂'}.ss-skylift:before,.ss-skylift.right:after{content:'🚡'}.ss-doublelift:before,.ss-doublelift.right:after{content:''}.ss-triplelift:before,.ss-triplelift.right:after{content:''}.ss-quadlift:before,.ss-quadlift.right:after{content:''}.ss-mountains:before,.ss-mountains.right:after{content:'⛰'}.ss-alert:before,.ss-alert.right:after{content:'⚠'}.ss-easy:before,.ss-easy.right:after{content:''}.ss-intermediate:before,.ss-intermediate.right:after{content:''}.ss-difficult:before,.ss-difficult.right:after{content:''}.ss-expert:before,.ss-expert.right:after{content:''}

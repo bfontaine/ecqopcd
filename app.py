@@ -36,7 +36,9 @@ js = Bundle('%s.js' % APP_NAME,
 assets.register('js_all', js)
 
 ### CSS
-css = Bundle('normalize.css', '%s.css' % APP_NAME,
+css = Bundle('normalize.css',
+             'icons/ss-forecast/ss-forecast.css',
+             '%s.css' % APP_NAME,
              filters=('cssmin',), output='%s.min.css' % APP_NAME)
 assets.register('css_all', css)
 

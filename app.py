@@ -44,6 +44,8 @@ css = Bundle('normalize.css',
 assets.register('css_all', css)
 
 #@cache.cached(timeout=600)  # 10 mins
+
+
 @app.route('/')
 def index():
     setattr(g, 'weather', db.get_weather())

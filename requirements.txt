@@ -15,11 +15,16 @@ gunicorn==18.0
 html5lib==0.999
 itsdangerous==0.23
 jsmin==2.0.9
+libsass==0.3.0
 lxml==3.3.3
 newrelic==2.16.0.12
 pep8==1.4.6
+py==1.4.20
 redis==2.9.1
+requests==2.2.1
 six==1.6.1
+update-checker==0.9
+virtualenv==1.11.4
 webassets==0.9
 wsgiref==0.1.2
 xmltodict==0.8.6

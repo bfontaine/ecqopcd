@@ -9,6 +9,9 @@ import os
 import redis
 import json
 import time
+from utils import log
+
+from redis.exceptions import ConnectionError
 
 from firapria import pollution
 import ecqopcd.weather as weather
@@ -29,8 +32,12 @@ def fetch_data():
 
 
 def __ensure_key_exist(k):
-    if not redis.exists(k):
-        fetch_data()
+    try:
+        if not redis.exists(k):
+            fetch_data()
+    except ConnectionError as e:
+        log("Can't connect to redis.")
+        raise e
 
 
 def get_pollution():

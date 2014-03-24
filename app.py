@@ -7,20 +7,11 @@ from flask import Flask, render_template, g
 from flask.ext.assets import Environment, Bundle
 from flask.ext.cache import Cache
 from htmlmin.minify import html_minify
+from webassets_iife import IIFE
 
 APP_NAME = 'ecqopcd'
 
 # a large portion of this code comes from github.com/bfontaine/web-pp
-
-
-def iife(_in, out, **kw):
-    """
-    'iife' filter for webassets. It wraps a JS bundle in an IIFE, thus
-    preventing global leaks.
-    """
-    out.write(';!function(){')
-    out.write(_in.read())
-    out.write('}();')
 
 
 def scss(_in, out, **kw):
@@ -39,7 +30,7 @@ assets = Environment(app)
 
 ### JS
 js = Bundle('%s.js' % APP_NAME,
-            filters=(iife, 'closure_js'), output='%s.min.js' % APP_NAME)
+            filters=(IIFE, 'closure_js'), output='%s.min.js' % APP_NAME)
 assets.register('js_all', js)
 
 ### CSS

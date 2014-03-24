@@ -26,5 +26,6 @@ six==1.6.1
 update-checker==0.9
 virtualenv==1.11.4
 webassets==0.9
+webassets-iife==0.0.2
 wsgiref==0.1.2
 xmltodict==0.8.6

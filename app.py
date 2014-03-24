@@ -48,6 +48,7 @@ assets.register('css_all', css)
 
 @app.route('/')
 def index():
+    setattr(g, 'title', 'ECQPCD?')
     setattr(g, 'data', tpl.tpl_vals())
     html = render_template('main.html')
     return html_minify(html)

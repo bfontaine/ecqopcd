@@ -12,10 +12,10 @@ def forecast_icon(condition):
     return an icon for a forecast condition. This is HTML code and thus should
     not be escaped in the template.
     """
-    base_code = '<i class=".ss-%s">&#x%s;</i>'
+    base_code = '<i class="ss-icon">&#x%s;</i>'
 
     # TODO
-    return base_code % ('sun', '2600')
+    return base_code % '2600' # sun
 
 
 def pollution_class(indice):
@@ -72,4 +72,5 @@ def tpl_vals():
         'pollution': tpl_pollution(),
         'weather': tpl_weather(),
         'last_fetch': last_fetch,
+        'answer': 'peut-être', # TODO
     }

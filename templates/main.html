@@ -1,35 +1,58 @@
 <!doctype html>
 <html lang="fr" dir="ltr">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="language" content="fr" />
-        <title>Est-ce qu&rsquo;on peut courir demain ?</title>
-        {% assets "css_all" %}
-        <link rel="stylesheet" href="{{ ASSET_URL }}" />
-        {% endassets %}
-        {#
-        <link rel="icon" type="image/png" href="/static/icons/app.png" />
-        <link rel="apple-touch-icon"      href="/static/icons/app.png" />
-        #}
-        <meta name="author"   content="Baptiste Fontaine" />
-    </head>
-    <body class="app">
-        {# TODO #}
-
-        {#
-        <!-- for Facebook -->
-        <img style="display:none" src="/static/icons/app.png" />
-        #}
-
-        <p>Hi!</p>
-
-        <footer>
-            <p>&copy;&nbsp;2014&nbsp;<a href="http://bfontaine.net"
-                                        class="text" />Baptiste Fontaine</a></p>
-        </footer>
-        {% assets "js_all" %}
-        <script src="{{ ASSET_URL }}"></script>
-        {% endassets %}
-    </body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="language" content="fr" />
+    <title>Est-ce qu&rsquo;on peut courir demain ?</title>
+    {% assets "css_all" %}
+    <link rel="stylesheet" href="{{ ASSET_URL }}" />
+    {% endassets %}
+    {#
+    <link rel="icon" type="image/png" href="/static/icons/app.png" />
+    <link rel="apple-touch-icon"      href="/static/icons/app.png" />
+    #}
+    <meta name="author"   content="Baptiste Fontaine" />
+  </head>
+  <body class="app">
+    {# for FB: #}
+    {# <img style="display:none" src="/static/icons/app.png" /> #}
+    <div class="container">
+      <div class="content">
+        <h1>{{ g.title }}</h1>
+        <p class="answer">{{ g.answer|default('peut-etre')|capitalize }}</p>
+        <div class="data">
+          <div class="data-block pollution {{ g.data.pollution.tomorrow.class }}">
+            <h6>Pollution</h6>
+            <div class="data-content">
+              <i class="ss-icon icon">&#xF255;</i>
+              <p class="value">
+              <span class="indice">{{ g.data.pollution.tomorrow.value }}</span><span class="static-max">/100</span>
+              </p>
+            </div>
+          </div>
+          <div class="data-block weather {{ g.data.weather.tomorrow.class }}">
+            <h6>M&eacute;t&eacute;o</h6>
+            <div class="data-content">
+              {{ g.data.weather.tomorrow.icon|safe }}
+              <p class="value">
+                <span class="max">{{ g.data.weather.tomorrow.high }}</span>
+                <span class="min">{{ g.data.weather.tomorrow.low }}</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <p class="sources">Donn&eacute;es pollution&nbsp;:&nbsp;<a href="http://airparif.asso.fr" rel="external nofollow">Airparif</a>,
+                           donn&eacute;es m&eacute;t&eacute;o&nbsp;:&nbsp;<a href="http://www.previmeteo.com/" rel="external nofollow">Previmeteo</a></p>
+        <p>&copy;&nbsp;2014&nbsp;<a href="http://bfontaine.net"
+                                    class="text" />Baptiste Fontaine</a></p>
+      </footer>
+    </div>
+    {% assets "js_all" %}
+    <script src="{{ ASSET_URL }}"></script>
+    {% endassets %}
+    <!-- last data update: {{ g.data.last_fetch }} -->
+  </body>
 </html>
 

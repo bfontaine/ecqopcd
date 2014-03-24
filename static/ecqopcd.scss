@@ -1,11 +1,9 @@
-/*
-  dark:      #0B0D28
-  light 1:   #F4EDDA
-  light 2:   #DBB795
-  light 3:   #BF7257
-  highlight: #D70538
- 
- */
+
+$dark:      #0B0D28;
+$light1:    #F4EDDA;
+$light2:    #DBB795;
+$light3:    #BF7257;
+$highlight: #D70538;
 
 * {
   -webkit-box-sizing: border-box;
@@ -15,5 +13,10 @@
 }
 body {
   font-family: helvetica, arial, sans-serif;
-  background-color: #F4EDDA;
+  background-color: $light1;
+}
+
+footer a {
+  color: inherit;
+  text-decoration: inherit;
 }

@@ -18,7 +18,6 @@ populate:
 run:
 	$(INITSHELL); \
 	CLOSURE_COMPRESSOR_OPTIMIZATION=ADVANCED_OPTIMIZATIONS \
-	KEEP_COMMENTS_ON_MINIFYING=True \
 	gunicorn app:app
 
 stylecheck:

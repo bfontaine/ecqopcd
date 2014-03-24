@@ -1,6 +1,7 @@
 # -*- coding: UTF-8 -*-
 
 import os
+import sass
 from ecqopcd import db, tpl
 from flask import Flask, render_template, g
 from flask.ext.assets import Environment, Bundle
@@ -21,6 +22,11 @@ def iife(_in, out, **kw):
     out.write(_in.read())
     out.write('}();')
 
+
+def scss(_in, out, **kw):
+    """sass compilation"""
+    out.write(sass.compile(string=_in.read()))
+
 app = Flask(__name__)
 app.debug = True
 
@@ -39,8 +45,8 @@ assets.register('js_all', js)
 ### CSS
 css = Bundle('normalize.css',
              'ss-forecast.css',
-             '%s.css' % APP_NAME,
-             filters=('cssmin',), output='%s.min.css' % APP_NAME)
+             '%s.scss' % APP_NAME,
+             filters=(scss, 'cssmin',), output='%s.min.css' % APP_NAME)
 assets.register('css_all', css)
 
 #@cache.cached(timeout=600)  # 10 mins

@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="language" content="fr" />
     <title>Est-ce qu&rsquo;on peut courir demain ?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui" />
     {% assets "css_all" %}
     <link rel="stylesheet" href="{{ ASSET_URL }}" />
     {% endassets %}
@@ -34,9 +35,9 @@
             <h6>M&eacute;t&eacute;o</h6>
             <div class="data-content">
               {{ g.data.weather.tomorrow.icon|safe }}
-              <p class="value">
-                <span class="max">{{ g.data.weather.tomorrow.high }}</span>
-                <span class="min">{{ g.data.weather.tomorrow.low }}</span>
+              <p class="values">
+                <span class="max"><span class="value">{{ g.data.weather.tomorrow.high }}</span><span class="unit">&deg;C</span></span>
+                <span class="min"><span class="value">{{ g.data.weather.tomorrow.low  }}</span><span class="unit">&deg;C</span></span>
               </p>
             </div>
           </div>
@@ -45,8 +46,7 @@
       <footer>
         <p class="sources">Donn&eacute;es pollution&nbsp;:&nbsp;<a href="http://www.airparif.asso.fr" rel="external nofollow">Airparif</a>,
                            donn&eacute;es m&eacute;t&eacute;o&nbsp;:&nbsp;<a href="http://www.previmeteo.com/" rel="external nofollow">Previmeteo</a></p>
-        <p>&copy;&nbsp;2014&nbsp;<a href="http://bfontaine.net"
-                                    class="text" />Baptiste Fontaine</a></p>
+        <p class="author">&copy;&nbsp;2014&nbsp;<a href="http://bfontaine.net" class="text" />Baptiste Fontaine</a></p>
       </footer>
     </div>
     {% assets "js_all" %}

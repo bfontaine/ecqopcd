@@ -1,4 +1,4 @@
-
+$text:      #000;
 $dark:      #0B0D28;
 $light1:    #F4EDDA;
 $light2:    #DBB795;
@@ -14,9 +14,13 @@ $highlight: #D70538;
 body {
   font-family: helvetica, arial, sans-serif;
   background-color: $light1;
+  color: $text;
 }
 
-footer a {
+a {
   color: inherit;
+}
+
+footer .author a {
   text-decoration: inherit;
 }

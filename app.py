@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 
 import os
-from ecqopcd import db
+from ecqopcd import db, tpl
 from flask import Flask, render_template, g
 from flask.ext.assets import Environment, Bundle
 from flask.ext.cache import Cache
@@ -48,7 +48,6 @@ assets.register('css_all', css)
 
 @app.route('/')
 def index():
-    setattr(g, 'weather', db.get_weather())
-    setattr(g, 'pollution', db.get_pollution())
+    setattr(g, 'data', tpl.tpl_vals())
     html = render_template('main.html')
     return html_minify(html)

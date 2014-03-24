@@ -28,9 +28,24 @@ def fetch_data():
     redis.set('data.last_fetch', int(time.time()))
 
 
+def __ensure_key_exist(k):
+    if not redis.exists(k):
+        fetch_data()
+
+
 def get_pollution():
-    return json.loads(redis.get('data.pollution.json') or 'null')
+    k = 'data.pollution.json'
+    __ensure_key_exist(k)
+    return json.loads(redis.get(k) or 'null')
 
 
 def get_weather():
-    return json.loads(redis.get('data.weather.json') or 'null')
+    k = 'data.weather.json'
+    __ensure_key_exist(k)
+    return json.loads(redis.get(k) or 'null')
+
+
+def get_last_fetch():
+    k = 'data.last_fetch'
+    __ensure_key_exist(k)
+    return redis.get(k)

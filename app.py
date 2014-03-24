@@ -38,7 +38,7 @@ assets.register('js_all', js)
 
 ### CSS
 css = Bundle('normalize.css',
-             'icons/ss-forecast/ss-forecast.css',
+             'ss-forecast.css',
              '%s.css' % APP_NAME,
              filters=('cssmin',), output='%s.min.css' % APP_NAME)
 assets.register('css_all', css)
@@ -51,4 +51,4 @@ def index():
     setattr(g, 'title', 'ECQPCD?')
     setattr(g, 'data', tpl.tpl_vals())
     html = render_template('main.html')
-    return html_minify(html)
+    return html_minify(html, ignore_comments=False)

@@ -1,4 +1,5 @@
 # -*- coding: UTF-8 -*-
+from __future__ import unicode_literals
 
 import os
 import sass
@@ -39,9 +40,6 @@ css = Bundle('normalize.css',
              '%s.scss' % APP_NAME,
              filters=(scss, 'cssmin',), output='%s.min.css' % APP_NAME)
 assets.register('css_all', css)
-
-#@cache.cached(timeout=600)  # 10 mins
-
 
 @app.route('/')
 def index():

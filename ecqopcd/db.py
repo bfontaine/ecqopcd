@@ -1,4 +1,5 @@
 # -*- coding: UTF-8 -*-
+from __future__ import unicode_literals
 
 """
 Redis-based mini DB with weather forecasts and pollution indices from the last

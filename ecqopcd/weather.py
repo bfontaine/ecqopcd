@@ -1,18 +1,19 @@
 # -*- coding: UTF-8 -*-
+from __future__ import unicode_literals
 
 import os
 import xmltodict
 from urllib import urlopen
 
 __day_names = {
-    u'Auj': u'Aujourd’hui',
-    u'Lun': u'Lundi',
-    u'Mar': u'Mardi',
-    u'Mer': u'Mercredi',
-    u'Jeu': u'Jeudi',
-    u'Ven': u'Vendredi',
-    u'Sam': u'Samedi',
-    u'Dim': u'Dimanche',
+    'Auj': 'Aujourd’hui',
+    'Lun': 'Lundi',
+    'Mar': 'Mardi',
+    'Mer': 'Mercredi',
+    'Jeu': 'Jeudi',
+    'Ven': 'Vendredi',
+    'Sam': 'Samedi',
+    'Dim': 'Dimanche',
 }
 
 SUNNY = 100
@@ -22,10 +23,10 @@ MIST = 30
 
 # condition -> indice on 100. The higher the better
 conditions = {
-    u'ensoleillé': SUNNY,
-    u'globalement couvert': MOSTLY_CLOUDY,
-    u'nuageux': CLOUDY,
-    u'pluie fine': MIST,
+    'ensoleillé': SUNNY,
+    'globalement couvert': MOSTLY_CLOUDY,
+    'nuageux': CLOUDY,
+    'pluie fine': MIST,
 }
 
 

@@ -20,7 +20,7 @@
     <div class="container">
       <div class="content">
         <h1>{{ g.title }}</h1>
-        <p class="answer">{{ g.data.answer|capitalize }}</p>
+        <p class="answer">{{ g.data.answer|capitalize|safe }}</p>
         <div class="data">
           <div class="data-block pollution {{ g.data.pollution.tomorrow.class }}">
             <h6>Pollution</h6>

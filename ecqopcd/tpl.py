@@ -87,7 +87,7 @@ def tpl_answer(p, w, day='tomorrow'):
     high = w[day]['high']
     low = w[day]['low']
     wt = get_condition_indice(w[day]['condition'])
-    words = {-1: 'non', 0: 'peut-être', 1: 'oui'}
+    words = {-1: 'non', 0: 'peut-&ecirc;tre', 1: 'oui'}
 
     # very bad conditions
     if high < 0 or p > 80 or wt <= 35:

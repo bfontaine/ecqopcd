@@ -90,7 +90,7 @@ def tpl_answer(p, w, day='tomorrow'):
     words = {-1: 'non', 0: 'peut-&ecirc;tre', 1: 'oui'}
 
     # very bad conditions
-    if high < 0 or p > 80 or wt <= 35:
+    if high < 0 or p >= 78 or wt <= 35:
         return words[-1]
 
     # good conditions

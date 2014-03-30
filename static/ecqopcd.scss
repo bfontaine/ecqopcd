@@ -18,12 +18,10 @@ $text2: #333;
           box-sizing: border-box;
 }
 
-i.icon {
-  cursor: default;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 body {
@@ -33,15 +31,32 @@ body {
   text-align: center;
 }
 
+h1 {
+  padding-top: 20px;
+  margin-top: 0;
+}
+
+i.icon {
+  cursor: default;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
 a {
   color: inherit;
 }
 
+.content {
+  position: relative;
+  min-height: 100%;
+  margin-bottom: -80px;
+}
+
 footer {
   height: 70px;
-  position: fixed;
   width: 100%;
-  bottom: 0;
   color: $text2;
 
   p {
@@ -75,13 +90,19 @@ footer .author a {
 .data-block {
   vertical-align: top;
   display: inline-block;
-  margin: 0 25px;
+  margin: 0 10px;
   width: 120px;
   height: 200px;
 
   h2 {
     font-size: 1rem;
     margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .data-block {
+    margin: 0 25px;
   }
 }
 

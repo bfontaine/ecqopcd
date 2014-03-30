@@ -18,7 +18,6 @@
   <body class="app">
     {# for FB: #}
     {# <img style="display:none" src="/static/icons/app.png" /> #}
-    <div class="container">
       <div class="content">
         <h1>{{ g.title }}</h1>
         <p class="answer">{{ g.data.answer|capitalize|safe }}</p>
@@ -44,12 +43,12 @@
           </div>
         </div>
       </div>
+      <div class="push"></div>
       <footer>
         <p class="sources">Données pollution&nbsp;: <a href="http://www.airparif.asso.fr" rel="external nofollow">Airparif</a>,
                            données météo&nbsp;: <a href="http://www.previmeteo.com/" rel="external nofollow">Previmeteo</a></p>
         <p class="author">&copy;&nbsp;2014 <a href="http://bfontaine.net" class="text" />Baptiste Fontaine</a></p>
       </footer>
-    </div>
     {% assets "js_all" %}
     <script src="{{ ASSET_URL }}"></script>
     {% endassets %}

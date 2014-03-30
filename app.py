@@ -39,6 +39,7 @@ css = Bundle('normalize.css',
              filters=(scss, 'cssmin',), output='%s.min.css' % APP_NAME)
 assets.register('css_all', css)
 
+
 @app.route('/')
 def index():
     setattr(g, 'title', 'Est-ce qu’on peut courir demain ?')

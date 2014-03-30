@@ -11,10 +11,6 @@ all: stylecheck deploy
 deploy: stylecheck
 	git push heroku master
 
-populate:
-	$(INITSHELL); \
-	python scheduler.py
-
 run:
 	$(INITSHELL); \
 	CLOSURE_COMPRESSOR_OPTIMIZATION=ADVANCED_OPTIMIZATIONS \

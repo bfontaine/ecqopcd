@@ -24,30 +24,30 @@
         <p class="answer">{{ g.data.answer|capitalize|safe }}</p>
         <div class="data">
           <div class="data-block pollution {{ g.data.pollution.tomorrow.class }}">
-            <h6>Pollution</h6>
+            <h2>Pollution</h2>
             <div class="data-content">
-              <i class="ss-icon icon">&#xF255;</i>
+              <i class="ss-icon icon" title>&#xF255;</i>
               <p class="value">
-              <span class="indice">{{ g.data.pollution.tomorrow.value }}</span><span class="static-max">/100</span>
+              <span class="indice">{{ g.data.pollution.tomorrow.value }}</span><span class="sep">/</span><span class="static-max">100</span>
               </p>
             </div>
           </div>
           <div class="data-block weather {{ g.data.weather.tomorrow.class }}">
-            <h6>M&eacute;t&eacute;o</h6>
+            <h2>Météo</h2>
             <div class="data-content">
-              {{ g.data.weather.tomorrow.icon|safe }}
+              <i class="ss-icon icon" title="{{ g.data.weather.tomorrow.condition }}">{{ g.data.weather.tomorrow.icon|safe }}</i>
               <p class="values">
-                <span class="max"><span class="value">{{ g.data.weather.tomorrow.high }}</span><span class="unit">&deg;C</span></span>
-                <span class="min"><span class="value">{{ g.data.weather.tomorrow.low  }}</span><span class="unit">&deg;C</span></span>
+                <span class="max">{{ g.data.weather.tomorrow.high }}</span>
+                <span class="min">{{ g.data.weather.tomorrow.low  }}</span>
               </p>
             </div>
           </div>
         </div>
       </div>
       <footer>
-        <p class="sources">Donn&eacute;es pollution&nbsp;:&nbsp;<a href="http://www.airparif.asso.fr" rel="external nofollow">Airparif</a>,
-                           donn&eacute;es m&eacute;t&eacute;o&nbsp;:&nbsp;<a href="http://www.previmeteo.com/" rel="external nofollow">Previmeteo</a></p>
-        <p class="author">&copy;&nbsp;2014&nbsp;<a href="http://bfontaine.net" class="text" />Baptiste Fontaine</a></p>
+        <p class="sources">Données pollution&nbsp;: <a href="http://www.airparif.asso.fr" rel="external nofollow">Airparif</a>,
+                           données météo&nbsp;: <a href="http://www.previmeteo.com/" rel="external nofollow">Previmeteo</a></p>
+        <p class="author">&copy;&nbsp;2014 <a href="http://bfontaine.net" class="text" />Baptiste Fontaine</a></p>
       </footer>
     </div>
     {% assets "js_all" %}

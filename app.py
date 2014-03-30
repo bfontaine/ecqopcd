@@ -7,7 +7,6 @@ from ecqopcd import db, tpl
 from flask import Flask, render_template, g
 from flask.ext.assets import Environment, Bundle
 from flask.ext.cache import Cache
-from htmlmin.minify import html_minify
 from webassets_iife import IIFE
 
 APP_NAME = 'ecqopcd'
@@ -42,7 +41,6 @@ assets.register('css_all', css)
 
 @app.route('/')
 def index():
-    setattr(g, 'title', 'ECQPCD?')
+    setattr(g, 'title', 'Est-ce qu’on peut courir demain ?')
     setattr(g, 'data', tpl.tpl_vals())
-    html = render_template('main.html')
-    return html_minify(html, ignore_comments=False)
+    return render_template('main.html')

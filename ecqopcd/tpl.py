@@ -19,14 +19,16 @@ __icons = {
 
 def forecast_icon(condition):
     """
-    return an icon for a forecast condition. This is HTML code and thus should
-    not be escaped in the template.
+    return an icon for a forecast condition.
     """
     v = w.get_condition_indice(condition)
-    return '<i class="ss-icon">&#x%s;</i>' % __icons.get(v)
+    return '&#x%s;' % __icons.get(v)
 
 
 def pollution_class(indice):
+    if indice == '?':
+        return 'unknown'
+
     if indice < 45:
         return 'very-good'
     if indice < 60:
@@ -41,8 +43,8 @@ def pollution_class(indice):
 
 def tpl_pollution():
     pollution = db.get_pollution()
-    while len(pollution) < 3:
-        pollution.append(None)
+    if len(pollution) < 3:
+        pollution.append('?')
     return {
         'today': {
             'value': pollution[1],
@@ -84,10 +86,13 @@ def tpl_weather():
 
 def tpl_answer(p, w, day='tomorrow'):
     p = p[day]['value']
-    high = w[day]['high']
-    low = w[day]['low']
-    wt = get_condition_indice(w[day]['condition'])
-    words = {-1: 'non', 0: 'peut-&ecirc;tre', 1: 'oui'}
+    high = int(w[day]['high'])
+    low = int(w[day]['low'])
+    wt = int(get_condition_indice(w[day]['condition']))
+    words = {-1: 'non', 0: 'peut-être', 1: 'oui'}
+
+    if not isinstance(p, int):
+      p = 40
 
     # very bad conditions
     if high < 0 or p >= 78 or wt <= 35:

@@ -9,7 +9,6 @@ beautifulsoup4==4.3.2
 closure==20121212
 colorama==0.2.7
 cssmin==0.2.0
-django-htmlmin==0.7.0
 firapria==0.1.0
 gunicorn==18.0
 html5lib==0.999

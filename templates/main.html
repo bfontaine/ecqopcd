@@ -20,7 +20,7 @@
     {# <img style="display:none" src="/static/icons/app.png" /> #}
       <div class="content">
         <h1>Est-ce qu’on peut courir demain ?</h1>
-        <p class="answer">{{ g.data.answer|capitalize|safe }}</p>
+        <p class="answer {{ g.data.answer.class }}">{{ g.data.answer.text|capitalize }}</p>
         <div class="data">
           <div class="data-block pollution {{ g.data.pollution.tomorrow.class }}">
             <h2>Pollution</h2>

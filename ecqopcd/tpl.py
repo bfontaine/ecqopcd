@@ -16,6 +16,12 @@ __icons = {
     w.MIST: 'F225',
 }
 
+__i18n = {
+    'no': 'non',
+    'maybe': 'peut-être',
+    'yes': 'oui',
+}
+
 
 def forecast_icon(condition):
     """
@@ -89,22 +95,23 @@ def tpl_answer(p, w, day='tomorrow'):
     high = int(w[day]['high'])
     low = int(w[day]['low'])
     wt = int(get_condition_indice(w[day]['condition']))
-    words = {-1: 'non', 0: 'peut-être', 1: 'oui'}
+    words = {-1: 'no', 0: 'maybe', 1: 'yes'}
+
+    # maybe
+    w = 0
 
     if not isinstance(p, int) and wt > 40:
         # unknown pollution indice but good weather -> maybe
-        return words[0]
-
+        w = 0
     # very bad conditions
-    if high < 0 or p >= 78 or wt <= 35:
-        return words[-1]
-
+    elif high < 0 or p >= 78 or wt <= 35:
+        w = -1
     # good conditions
-    if p <= 65 and wt > 45:
-        return words[1]
+    elif p <= 65 and wt > 45:
+        w = 1
 
-    # maybe
-    return words[0]
+    word = words[w]
+    return {'class': word, 'text': __i18n.get(word, word)}
 
 
 def tpl_vals():

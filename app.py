@@ -7,7 +7,6 @@ from ecqopcd import db, tpl
 from flask import Flask, render_template, g
 from flask.ext.assets import Environment, Bundle
 from flask.ext.cache import Cache
-from webassets_iife import IIFE
 
 APP_NAME = 'ecqopcd'
 
@@ -28,11 +27,6 @@ cache = Cache(app)
 ## assets
 assets = Environment(app)
 
-### JS
-js = Bundle('%s.js' % APP_NAME,
-            filters=(IIFE, 'closure_js'), output='%s.min.js' % APP_NAME)
-assets.register('js_all', js)
-
 ### CSS
 css = Bundle('normalize.css',
              '%s.scss' % APP_NAME,
@@ -40,6 +34,7 @@ css = Bundle('normalize.css',
 assets.register('css_all', css)
 
 
+@cache.cached(timeout=600)  # 10 minutes
 @app.route('/')
 def index():
     setattr(g, 'title', 'Est-ce qu’on peut courir demain ?')

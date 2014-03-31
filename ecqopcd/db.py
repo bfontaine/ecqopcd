@@ -10,7 +10,6 @@ import os
 import redis
 import json
 import time
-from utils import log
 
 from redis.exceptions import ConnectionError
 
@@ -32,28 +31,19 @@ def fetch_data():
     redis.set('data.last_fetch', int(time.time()))
 
 
-def __ensure_key_exist(k):
-    try:
-        if not redis.exists(k):
-            fetch_data()
-    except ConnectionError as e:
-        log("Can't connect to redis.")
-        raise e
+def __get_key_or_null(k):
+    if not redis.exists(k):
+        fetch_data()
+    return json.loads(redis.get(k) or 'null')
 
 
 def get_pollution():
-    k = 'data.pollution.json'
-    __ensure_key_exist(k)
-    return json.loads(redis.get(k) or 'null')
+    return __get_key_or_null('data.pollution.json')
 
 
 def get_weather():
-    k = 'data.weather.json'
-    __ensure_key_exist(k)
-    return json.loads(redis.get(k) or 'null')
+    return __get_key_or_null('data.weather.json')
 
 
 def get_last_fetch():
-    k = 'data.last_fetch'
-    __ensure_key_exist(k)
-    return redis.get(k)
+    return __get_key_or_null('data.last_fetch')

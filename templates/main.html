@@ -6,18 +6,14 @@
     <title>Est-ce qu’on peut courir demain ?</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui" />
     <link rel="stylesheet" href="https://ssl10.ovh.net/~bfontain/fonts/ss-forecast/webfonts/ss-forecast.css" />
-    {% assets "css_all" %}
-    <link rel="stylesheet" href="{{ ASSET_URL }}" />
-    {% endassets %}
-    {#
-    <link rel="icon" type="image/png" href="/static/icons/app.png" />
-    <link rel="apple-touch-icon"      href="/static/icons/app.png" />
-    #}
-    <meta name="author"   content="Baptiste Fontaine" />
+    {% assets "css_all" %}<link rel="stylesheet" href="{{ ASSET_URL }}" />{% endassets %}
+    <link rel="icon" type="image/png" href="/static/ecqopcd.png" />
+    <link rel="apple-touch-icon" href="/static/ecqopcd.png" />
+    <meta name="author" content="Baptiste Fontaine" />
   </head>
   <body class="app">
-    {# for FB: #}
-    {# <img style="display:none" src="/static/icons/app.png" /> #}
+      {# for FB: #}
+      <img style="display:none" src="/static/ecqopcd.png" />
       <div class="content">
         <h1>Est-ce qu’on peut courir demain ?</h1>
         <p class="answer {{ g.data.answer.class }}">{{ g.data.answer.text|capitalize }}</p>

@@ -1,16 +1,13 @@
 # -*- coding: UTF-8 -*-
 from __future__ import unicode_literals
 
-import os
 import sass
-from ecqopcd import db, tpl
+from ecqopcd import tpl
 from flask import Flask, render_template, g
 from flask.ext.assets import Environment, Bundle
 from flask.ext.cache import Cache
 
 APP_NAME = 'ecqopcd'
-
-# a large portion of this code comes from github.com/bfontaine/web-pp
 
 
 def scss(_in, out, **kw):
@@ -37,6 +34,5 @@ assets.register('css_all', css)
 @cache.cached(timeout=600)  # 10 minutes
 @app.route('/')
 def index():
-    setattr(g, 'title', 'Est-ce qu’on peut courir demain ?')
     setattr(g, 'data', tpl.tpl_vals())
     return render_template('main.html')

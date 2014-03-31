@@ -63,7 +63,21 @@ footer {
 
   p {
     vertical-align: bottom;
-    margin: 10px 0;
+    margin: 14px 0;
+  }
+
+  a.gh {
+    display: inline-block;
+
+    i {
+      position: relative;
+      display: block;
+      top: 2px;
+    }
+  }
+
+  .sep {
+    opacity: 0.2;
   }
 }
 

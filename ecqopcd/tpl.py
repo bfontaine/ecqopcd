@@ -91,8 +91,9 @@ def tpl_answer(p, w, day='tomorrow'):
     wt = int(get_condition_indice(w[day]['condition']))
     words = {-1: 'non', 0: 'peut-être', 1: 'oui'}
 
-    if not isinstance(p, int):
-        p = 40
+    if not isinstance(p, int) and wt > 40:
+        # unknown pollution indice but good weather -> maybe
+        return words[0]
 
     # very bad conditions
     if high < 0 or p >= 78 or wt <= 35:

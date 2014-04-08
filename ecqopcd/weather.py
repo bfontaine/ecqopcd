@@ -17,16 +17,20 @@ __day_names = {
 }
 
 SUNNY = 100
+MOSTLY_SUNNY = 95
 CLOUDY = 80
 MOSTLY_CLOUDY = 60
 MIST = 30
+STORMY = 15
 
 # condition -> indice on 100. The higher the better
 conditions = {
     'ensoleillé': SUNNY,
+    'globalement ensoleillé': MOSTLY_SUNNY,
     'globalement couvert': MOSTLY_CLOUDY,
     'nuageux': CLOUDY,
     'pluie fine': MIST,
+    'risque d\'orages': STORMY,
 }
 
 

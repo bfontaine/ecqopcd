@@ -10,10 +10,12 @@ import weather as w
 from weather import get_condition_indice
 
 __icons = {
-    w.SUNNY: '3600',
+    w.SUNNY: '2600',
+    w.MOSTLY_SUNNY: '26C5',
     w.CLOUDY: '2601',
     w.MOSTLY_CLOUDY: 'F220',
     w.MIST: 'F225',
+    w.STORMY: 'F249',
 }
 
 __i18n = {

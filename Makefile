@@ -11,6 +11,12 @@ all: stylecheck deploy
 deploy: stylecheck
 	git push heroku master
 
+deps: venv
+	venv/bin/pip install -qr requirements.txt
+
+venv:
+	virtualenv venv
+
 run:
 	$(INITSHELL); \
 	CLOSURE_COMPRESSOR_OPTIMIZATION=ADVANCED_OPTIMIZATIONS \

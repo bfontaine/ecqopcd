@@ -18,9 +18,7 @@ You need Redis and Python 2.7 with virtualenv to run the app locally, as well
 as a [Previmeteo](http://previmeteo.com/) API key. Set up the local
 environment:
 
-    virtualenv --distribute venv
-    source venv/bin/activate
-    pip install -qr requirements.txt
+    make deps
     export PREVIMETEO_KEY='put-your-api-key-here'
 
 Then make sure a Redis server is running locally, and launch the app:

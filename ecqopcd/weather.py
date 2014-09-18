@@ -29,6 +29,7 @@ conditions = {
     'globalement ensoleillé': MOSTLY_SUNNY,
     'globalement couvert': MOSTLY_CLOUDY,
     'nuageux': CLOUDY,
+    'risque de pluie': MIST,
     'pluie fine': MIST,
     'risque d\'orages': STORMY,
 }

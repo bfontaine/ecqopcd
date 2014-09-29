@@ -4,7 +4,7 @@
 .PHONY: all stylecheck deploy populate run
 
 SRC=ecqopcd
-INITSHELL=source venv/bin/activate
+VENV=venv
 
 all: stylecheck deploy
 
@@ -18,9 +18,11 @@ venv:
 	virtualenv venv
 
 run:
-	$(INITSHELL); \
 	CLOSURE_COMPRESSOR_OPTIMIZATION=ADVANCED_OPTIMIZATIONS \
-	gunicorn app:app
+	$(VENV)/bin/gunicorn app:app
+
+populate:
+	$(VENV)/bin/python scheduler.py
 
 stylecheck:
 	pep8 $(SRC) app.py

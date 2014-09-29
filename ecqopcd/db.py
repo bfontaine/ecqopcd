@@ -11,8 +11,6 @@ import redis
 import json
 import time
 
-from redis.exceptions import ConnectionError
-
 from firapria import pollution
 import ecqopcd.weather as weather
 
@@ -24,9 +22,9 @@ def fetch_data():
     """
     Fetch external data and store it in redis
     """
-    p = pollution.PollutionFetcher()
+    p = pollution.get_indices()
     w = weather.defaultClient().weather()
-    redis.set('data.pollution.json', json.dumps(p.indices()))
+    redis.set('data.pollution.json', json.dumps(p))
     redis.set('data.weather.json', json.dumps(w))
     redis.set('data.last_fetch', int(time.time()))
 

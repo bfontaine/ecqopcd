@@ -5,7 +5,8 @@ that checks weather and pollution indices for the day after and tells if it’s
 ok to go out jogging.
 
 *est-ce qu’on peut courir demain* means “can we run tomorrow” in French. The
-app was written for a personal need and is live on [estcequonpeutcourirdemain.fr](http://estcequonpeutcourirdemain.fr).
+app was written for a personal need and used to be live at
+`estcequonpeutcourirdemain.fr`.
 
 The pollution indices fetcher was released as a standalone library,
 [Firapria][].
